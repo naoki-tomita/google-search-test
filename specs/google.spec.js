@@ -1,5 +1,5 @@
 const { browser } = require("protractor");
-const { GoogleTop } = require("./pages/google");
+const { GoogleTop } = require("../pages/google");
 
 describe("Google", () => {
   it("should search RICOH IT SOLUTIONS", async () => {

@@ -1,4 +1,5 @@
 exports.config = {
   target: "chrome",
-  specs: ["./google.spec.js"]
+  specs: ["./specs/*.spec.js"],
+  exclude: ["./node_modules/**"]
 }
