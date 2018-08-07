@@ -1,0 +1,13 @@
+{
+  "name": "protractor-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "protractor": "^5.4.0"
+  },
+  "scripts": {
+    "start": "protractor protractor.config.js",
+    "setup": "webdriver-manager clean && webdriver-manager update"
+  }
+}
