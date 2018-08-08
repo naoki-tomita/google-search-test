@@ -2,7 +2,6 @@ const {
   browser,
   element,
   by,
-  until,
   ExpectedConditions
 } = require("protractor");
 

@@ -1,6 +1,12 @@
-const { browser } = require("protractor");
-const { GoogleTop } = require("../pages/google");
-const { YahooTop } = require("../pages/yahoo");
+const {
+  browser
+} = require("protractor");
+const {
+  GoogleTop
+} = require("../pages/google");
+const {
+  YahooTop
+} = require("../pages/yahoo");
 
 const tests = [
   GoogleTop,
@@ -27,5 +33,3 @@ tests.forEach(SearchEngine => {
     });
   });
 });
-
-
