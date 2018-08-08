@@ -1,12 +1,12 @@
 const { browser } = require("protractor");
-const { GoogleTop } = require("../pages/google");
+const { YahooTop } = require("../pages/yahoo");
 
-describe("Google", () => {
+describe("Yahoo Japan", () => {
   it("should search RICOH IT SOLUTIONS", async () => {
     // This parameter must be true if Non Angular app testing.
     browser.ignoreSynchronization = true;
 
-    const topPage = new GoogleTop();
+    const topPage = new YahooTop();
     // Visit function is means show page.
     await topPage.visit();
     await topPage.inputSearchText("RICOH IT SOLUTIONS");
@@ -19,5 +19,3 @@ describe("Google", () => {
     expect(firstText).toBe("ホーム｜リコーITソリューションズ株式会社");
   });
 });
-
-

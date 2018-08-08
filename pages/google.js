@@ -43,10 +43,23 @@ class GoogleSearchResult {
 
   async getSearchResults() {
     const searchResults = element.all(by.css(`#rso > div`));
-    await browser.wait(ExpectedConditions.visibilityOf(searchResults.first()), 2000);
-    return searchResults;
+    const results = [];
+    await searchResults.each(r => results.push(new GoogleSearchResultItem(r)));
+    return results;
   }
 }
 
-module.exports.GoogleTop = GoogleTop;
-module.exports.GoogleSearchResult = GoogleSearchResult;
+class GoogleSearchResultItem {
+  constructor(elementFinder) {
+    this.elementFinder = elementFinder;
+  }
+
+  async linkText() {
+    await browser.wait(ExpectedConditions.visibilityOf(this.elementFinder), 2000);
+    return await this.elementFinder.$$("a").first().getText();
+  }
+}
+
+exports.GoogleTop = GoogleTop;
+exports.GoogleSearchResult = GoogleSearchResult;
+exports.GoogleSearchResultItem = GoogleSearchResultItem
