@@ -1,22 +1,12 @@
-const {
-  browser
-} = require("protractor");
-const {
-  GoogleTop
-} = require("../pages/google");
-const {
-  YahooTop
-} = require("../pages/yahoo");
-
-const tests = [
-  GoogleTop,
-  YahooTop,
-];
+const { browser } = require("protractor");
+const { GoogleTop } = require("../pages/google");
+const { YahooTop } = require("../pages/yahoo");
 
 async function wait(ms) {
   return new Promise(k => setTimeout(k, ms));
 }
 
+const tests = [ GoogleTop, YahooTop ];
 tests.forEach(SearchEngine => {
   describe(`${SearchEngine.name}`, () => {
     it("should search RICOH IT SOLUTIONS", async () => {
