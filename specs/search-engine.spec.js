@@ -13,6 +13,10 @@ const tests = [
   YahooTop,
 ];
 
+async function wait(ms) {
+  return new Promise(k => setTimeout(k, ms));
+}
+
 tests.forEach(SearchEngine => {
   describe(`${SearchEngine.name}`, () => {
     it("should search RICOH IT SOLUTIONS", async () => {
@@ -30,6 +34,7 @@ tests.forEach(SearchEngine => {
       const searchResults = await searchResultPage.getSearchResults();
       const firstText = await searchResults[0].linkText();
       expect(firstText).toBe("ホーム｜リコーITソリューションズ株式会社");
+      await wait(2000);
     });
   });
 });
