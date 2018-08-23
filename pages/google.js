@@ -1,9 +1,4 @@
-const {
-  browser,
-  element,
-  by,
-  ExpectedConditions
-} = require("protractor");
+const { browser, element, by, ExpectedConditions } = require("protractor");
 
 class GoogleTop {
   async visit() {
